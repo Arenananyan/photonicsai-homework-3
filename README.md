@@ -1,6 +1,8 @@
 # Homework 3 — Hardware in the loop
 
-Aren Ananyan · PhotonicsAI
+Team: Aren Ananyan · David Sargsyan · Andranik Arakelyan · Yerem Bareghamyan
+
+PhotonicsAI
 
 A standalone LangGraph application with coordinator, scientist, general and
 executor roles, MCP instrument tools, shared measured results and a human approval
@@ -112,4 +114,6 @@ by Git. The local virtual environment and credentials are ignored too.
 
 The printer source license is preserved at `vendor/printer/LICENSE`.
 `docs/source-manifest.json` records the origins and hashes of reused modules.
-The final LaTeX report and repository publication are pending review.
+The report is available as [PDF](docs/report/PhotonicsAI_Homework3_Report.pdf)
+and [LaTeX source](docs/report/main.tex). To rebuild with Tectonic, run
+`cd docs/report && tectonic main.tex`; this generates `main.pdf`.

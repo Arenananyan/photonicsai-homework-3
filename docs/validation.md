@@ -26,5 +26,7 @@ step removal and the JSON model-proposal protocol.
 - The graph adapts the earlier four-role architecture; it does not import the
   previous Silverbox scientist/training executor unchanged.
 
-The final report will be authored in LaTeX after review. Outdated report drafts
-and failed local runs were removed from this submission directory.
+The final report is authored in LaTeX at `report/main.tex`, with the compiled
+PDF at `report/PhotonicsAI_Homework3_Report.pdf`. Both desktop compilation and
+Tectonic compilation succeeded; all five rendered pages were visually reviewed.
+Outdated report drafts and failed local runs were removed from this directory.
