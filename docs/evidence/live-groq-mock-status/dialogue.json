@@ -1,0 +1,90 @@
+[
+  {
+    "type": "human",
+    "data": {
+      "content": "Read printer status only, explicitly label simulated readings, explain measured XYZ, finish without movement.",
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "type": "human",
+      "name": null,
+      "id": "f462b1fd-dd6e-4834-83f6-26b8963e0abe"
+    }
+  },
+  {
+    "type": "ai",
+    "data": {
+      "content": "Read printer status",
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "type": "ai",
+      "name": "orchestrator",
+      "id": "4003b199-1a50-484a-a7ee-954c75ebc5f5",
+      "tool_calls": [],
+      "invalid_tool_calls": [],
+      "usage_metadata": null
+    }
+  },
+  {
+    "type": "ai",
+    "data": {
+      "content": "",
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "type": "ai",
+      "name": "executor",
+      "id": "f2d729fc-7b05-4684-8ffb-d31877c4826c",
+      "tool_calls": [
+        {
+          "name": "printer_status",
+          "args": {},
+          "id": "fc_a9f50b0b-6acd-4377-9448-298586155e24",
+          "type": "tool_call"
+        }
+      ],
+      "invalid_tool_calls": [],
+      "usage_metadata": null
+    }
+  },
+  {
+    "type": "tool",
+    "data": {
+      "content": "{\"ok\": true, \"simulated\": true, \"state\": {\"webhooks\": {\"state\": \"ready\"}, \"print_stats\": {\"state\": \"standby\"}, \"toolhead\": {\"position\": [100.0, 100.0, 5.0, 0.0], \"homed_axes\": \"xyz\", \"axis_minimum\": [-12.0, -20.0, -5.0, 0.0], \"axis_maximum\": [221.0, 223.0, 246.0, 0.0]}, \"motion_report\": {\"live_position\": [100.0, 100.0, 5.0, 0.0], \"live_velocity\": 0.0}, \"gcode_move\": {\"position\": [100.0, 100.0, 5.0, 0.0], \"gcode_position\": [100.0, 100.0, 5.0, 0.0], \"homing_origin\": [0.0, 0.0, 0.0, 0.0], \"speed_factor\": 1.0}, \"heater_bed\": {\"target\": 0.0}, \"extruder\": {\"target\": 0.0}, \"bed_mesh\": {\"profile_name\": \"\", \"mesh_matrix\": [[]]}, \"homing_lift_mm\": 5.0, \"motion_limits\": {\"max_velocity\": 500.0, \"max_z_velocity\": 30.0, \"max_accel\": 8000.0, \"max_z_accel\": 300.0}}}",
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "type": "tool",
+      "name": "printer_status",
+      "id": "59aba540-0526-4704-a6e8-83cb372517d5",
+      "tool_call_id": "fc_a9f50b0b-6acd-4377-9448-298586155e24",
+      "artifact": null,
+      "status": "success"
+    }
+  },
+  {
+    "type": "ai",
+    "data": {
+      "content": "**Simulated printer status (no real hardware was queried):**\n\n| Item | Value |\n|------|-------|\n| **Webhooks state** | `ready` |\n| **Print stats** | `standby` |\n| **Toolhead position** (X, Y, Z, E) | **100 mm**, **100 mm**, **5 mm**, **0 mm** |\n| **Homed axes** | `xyz` (all three axes are homed) |\n| **Axis limits** | X: ‑12 mm → 221 mm Y: ‑20 mm → 223 mm Z: ‑5 mm → 246 mm |\n| **Live position** (same as toolhead) | 100 mm / 100 mm / 5 mm |\n| **Live velocity** | 0 mm/s (stationary) |\n| **G‑code reported position** | 100 mm / 100 mm / 5 mm |\n| **Homing origin** | (0 mm, 0 mm, 0 mm) |\n| **Speed factor** | 1.0 (full speed allowed) |\n| **Heater bed target** | 0 °C (off) |\n| **Extruder target** | 0 °C (off) |\n| **Bed mesh** | No mesh loaded |\n| **Homing lift** | 5 mm (lift height after homing) |\n| **Motion limits** | Max velocity 500 mm/s (X/Y), Max Z velocity 30 mm/s, Max acceleration 8000 mm/s² (X/Y), Max Z acceleration 300 mm/s² |\n\n**Explanation of the measured XYZ values**\n\n- The printer reports its current **X = 100 mm**, **Y = 100 mm**, **Z = 5 mm**.  \n- These coordinates are measured relative to the printer’s origin (0, 0, 0) after homing.  \n- Because the axes are homed (`homed_axes: \"xyz\"`), the values are reliable within the firmware’s coordinate system.  \n- The live position matches the toolhead’s stored position, confirming the printer is stationary (live velocity = 0 mm/s).  \n\nNo movement was performed, and all readings are **simulated** as indicated by the `simulated: true` flag in the response.",
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "type": "ai",
+      "name": "executor",
+      "id": "20d720ab-8541-440b-bdf1-5a39553d04e7",
+      "tool_calls": [],
+      "invalid_tool_calls": [],
+      "usage_metadata": null
+    }
+  },
+  {
+    "type": "ai",
+    "data": {
+      "content": "Provided simulated printer status and XYZ explanation as requested. No movement performed.",
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "type": "ai",
+      "name": "orchestrator",
+      "id": "044b467d-2815-4459-869d-92eedc0ca76a",
+      "tool_calls": [],
+      "invalid_tool_calls": [],
+      "usage_metadata": null
+    }
+  }
+]

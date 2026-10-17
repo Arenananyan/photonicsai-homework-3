@@ -1,0 +1,37 @@
+[
+  {
+    "source": "photonics-printer-mcp-main/printer_client.py",
+    "copy": "vendor/printer/printer_client.py",
+    "sha256": "e32ac1e3ac686cc64dda0449e5d8354422f7da772bee63daf72d75fc43b6c143"
+  },
+  {
+    "source": "photonics-printer-mcp-main/printer_policy.py",
+    "copy": "vendor/printer/printer_policy.py",
+    "sha256": "447962e4a87eef22e4e6632ba752f0b5c3869b61df68fbb73988d166fe1eaec5"
+  },
+  {
+    "source": "photonics-printer-mcp-main/printer_watchdog.py",
+    "copy": "vendor/printer/printer_watchdog.py",
+    "sha256": "67a221a4a25db1e6b5f12f36a77955b80c758f89fc16976769ce06712eb2f322"
+  },
+  {
+    "source": "photonics-printer-mcp-main/fastmcp_server.py",
+    "copy": "vendor/printer/fastmcp_server.py",
+    "sha256": "3a1babab811d409eba112f696d6f6b13c580a930b1c85940f6fde72acdc47cef"
+  },
+  {
+    "source": "photonics-printer-mcp-main/printer_commands.py",
+    "copy": "vendor/printer/printer_commands.py",
+    "sha256": "c5c75ba6546ef57a753ca746fb80af1eb5bf750dd41f18478eb9bc5af03ebfff"
+  },
+  {
+    "source": "photonics-printer-mcp-main/LICENSE",
+    "copy": "vendor/printer/LICENSE",
+    "sha256": "543b0068b79a2dd3af526569cc1245ec9a3cec0784bb4384b6be9f63f9f3a971"
+  },
+  {
+    "source": "task6_langgraph_multiagent/homework2_task2/simulator.py",
+    "copy": "vendor/homework2_bench/simulator.py",
+    "sha256": "d95acd804518c86989cada582ca509464590a08335e68d5baab48c7b82f7677b"
+  }
+]

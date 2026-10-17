@@ -1,0 +1,204 @@
+[
+  {
+    "type": "human",
+    "data": {
+      "content": "Ask scientist for one short plan, then executor: read simulated printer status, preview a safe move to X110 Y110 Z100 at 10 mm/s, wait for host approval, execute once, read status again, and report the simulated measured position.",
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "type": "human",
+      "name": null,
+      "id": "5ed37fa3-c4a7-43b7-ae64-790cd9042360"
+    }
+  },
+  {
+    "type": "ai",
+    "data": {
+      "content": "Plan the requested instrument check.",
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "type": "ai",
+      "name": "orchestrator",
+      "id": "b4c269ef-87ce-443a-8cef-3e7ef7834cdf",
+      "tool_calls": [],
+      "invalid_tool_calls": [],
+      "usage_metadata": null
+    }
+  },
+  {
+    "type": "ai",
+    "data": {
+      "content": "Read status. For movement, preview and ask approval, then read status again.",
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "type": "ai",
+      "name": "scientist",
+      "id": "564513e9-0252-472f-87cd-d55234607aa5",
+      "tool_calls": [],
+      "invalid_tool_calls": [],
+      "usage_metadata": null
+    }
+  },
+  {
+    "type": "ai",
+    "data": {
+      "content": "Read measured evidence through MCP.",
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "type": "ai",
+      "name": "orchestrator",
+      "id": "6ff20d65-8d35-4121-921b-c7b987e1edf8",
+      "tool_calls": [],
+      "invalid_tool_calls": [],
+      "usage_metadata": null
+    }
+  },
+  {
+    "type": "ai",
+    "data": {
+      "content": "",
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "type": "ai",
+      "name": "executor",
+      "id": "d2035ca0-7b40-413f-a147-9b8f67abfa1e",
+      "tool_calls": [
+        {
+          "name": "printer_status",
+          "args": {},
+          "id": "a386d60db2934c2993df233c51714c66",
+          "type": "tool_call"
+        }
+      ],
+      "invalid_tool_calls": [],
+      "usage_metadata": null
+    }
+  },
+  {
+    "type": "tool",
+    "data": {
+      "content": "{\"ok\": true, \"simulated\": true, \"state\": {\"webhooks\": {\"state\": \"ready\"}, \"print_stats\": {\"state\": \"standby\"}, \"toolhead\": {\"position\": [100.0, 100.0, 5.0, 0.0], \"homed_axes\": \"xyz\", \"axis_minimum\": [-12.0, -20.0, -5.0, 0.0], \"axis_maximum\": [221.0, 223.0, 246.0, 0.0]}, \"motion_report\": {\"live_position\": [100.0, 100.0, 5.0, 0.0], \"live_velocity\": 0.0}, \"gcode_move\": {\"position\": [100.0, 100.0, 5.0, 0.0], \"gcode_position\": [100.0, 100.0, 5.0, 0.0], \"homing_origin\": [0.0, 0.0, 0.0, 0.0], \"speed_factor\": 1.0}, \"heater_bed\": {\"target\": 0.0}, \"extruder\": {\"target\": 0.0}, \"bed_mesh\": {\"profile_name\": \"\", \"mesh_matrix\": [[]]}, \"homing_lift_mm\": 5.0, \"motion_limits\": {\"max_velocity\": 500.0, \"max_z_velocity\": 30.0, \"max_accel\": 8000.0, \"max_z_accel\": 300.0}}}",
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "type": "tool",
+      "name": "printer_status",
+      "id": "b050533c-c576-486d-9778-6c4591a2ddb8",
+      "tool_call_id": "a386d60db2934c2993df233c51714c66",
+      "artifact": null,
+      "status": "success"
+    }
+  },
+  {
+    "type": "ai",
+    "data": {
+      "content": "",
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "type": "ai",
+      "name": "executor",
+      "id": "3c3fa437-c4ef-486a-9e77-e9954c0f3d6c",
+      "tool_calls": [
+        {
+          "name": "preview_sequence",
+          "args": {
+            "steps": [
+              {
+                "axis": "z",
+                "distance_mm": 95.0
+              },
+              {
+                "axis": "xy",
+                "distance_mm": [
+                  10.0,
+                  10.0
+                ]
+              }
+            ],
+            "speed_mm_s": 10.0,
+            "z_speed_mm_s": 10.0
+          },
+          "id": "9634042e69ee4eb48321c2bd321f54bd",
+          "type": "tool_call"
+        }
+      ],
+      "invalid_tool_calls": [],
+      "usage_metadata": null
+    }
+  },
+  {
+    "type": "tool",
+    "data": {
+      "content": "{\"ok\": true, \"simulated\": true, \"token\": \"dcf6f12b0f3845f9ba4757385fad63f0\", \"expires_in_seconds\": 120, \"absolute\": false, \"end\": [110.0, 110.0, 100.0], \"start\": [100.0, 100.0, 5.0], \"targets\": [[100.0, 100.0, 100.0], [110.0, 110.0, 100.0]], \"bounds\": [-12.0, 221.0, -20.0, 223.0], \"z_bounds\": [-5.0, 246.0], \"z_speed_mm_s\": 10.0, \"step_speeds_mm_s\": [10.0, 10.0], \"startup_zero_window_seconds\": 0.5, \"speed_mm_s\": 10.0, \"nominal_seconds\": 10.914213562373096}",
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "type": "tool",
+      "name": "preview_sequence",
+      "id": "8ad72f64-8029-42e7-9221-f21c9b0e84e7",
+      "tool_call_id": "9634042e69ee4eb48321c2bd321f54bd",
+      "artifact": null,
+      "status": "success"
+    }
+  },
+  {
+    "type": "ai",
+    "data": {
+      "content": "",
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "type": "ai",
+      "name": "executor",
+      "id": "b9619387-125a-43f3-bf42-ba6df528f65d",
+      "tool_calls": [
+        {
+          "name": "execute_sequence",
+          "args": {
+            "token": "dcf6f12b0f3845f9ba4757385fad63f0",
+            "operator_confirmed": false
+          },
+          "id": "7d8a5514c0b84f579911a2084d6cb645",
+          "type": "tool_call"
+        }
+      ],
+      "invalid_tool_calls": [],
+      "usage_metadata": null
+    }
+  },
+  {
+    "type": "tool",
+    "data": {
+      "content": "{\"ok\": false, \"error\": \"Operator declined or preview expired; no movement.\"}",
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "type": "tool",
+      "name": "execute_sequence",
+      "id": "901727a6-4be3-4ab1-af2b-e95b442abd3d",
+      "tool_call_id": "7d8a5514c0b84f579911a2084d6cb645",
+      "artifact": null,
+      "status": "success"
+    }
+  },
+  {
+    "type": "human",
+    "data": {
+      "content": "Declined or expired approval for 7d8a5514c0b84f579911a2084d6cb645",
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "type": "human",
+      "name": "human",
+      "id": "73e48b75-0e8c-402b-8e92-7651d16f6564"
+    }
+  },
+  {
+    "type": "ai",
+    "data": {
+      "content": "The measured tool result is in the shared dialogue; scripted run finished.",
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "type": "ai",
+      "name": "orchestrator",
+      "id": "6a657d7f-dd28-48f0-b535-c54a38df16f9",
+      "tool_calls": [],
+      "invalid_tool_calls": [],
+      "usage_metadata": null
+    }
+  }
+]

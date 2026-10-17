@@ -1,0 +1,7 @@
+langgraph==1.2.14
+langchain-core>=1,<2
+fastmcp==4.1.0
+groq==1.7.0
+python-dotenv==1.2.4
+numpy>=2,<3
+jsonschema>=4.20,<5
